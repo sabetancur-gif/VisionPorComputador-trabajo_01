@@ -58,7 +58,8 @@ QUANTUMVIZ_VISION-COMPUTADORA/
 │  └─ segmentacion/                 # Resultados ejercicio 5
 │
 └─ Documentacion/
-   └─ QuantumViz.pdf                # PDF con teoría, metodología, resultados y análisis
+   └─ QuantumViz.pdf               # PDF con teoría, metodología, resultados y análisis
+   └─ QuantumViz.md                # markdown con teoría, metodología, resultados y análisis
 ```
 
 > Nota:
