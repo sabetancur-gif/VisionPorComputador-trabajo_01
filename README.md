@@ -32,30 +32,34 @@ Ejecute el archivo **`Trabajo_01_VisionPorComputador.ipynb`**, ubicado en la ra�
 Durante la ejecución celda por celda, el programa hará uso de la estructura de carpetas creada para almacenar y acceder a los resultados.
 
 
+### 📂 Estructura del proyecto
+
+```plaintext
 QUANTUMVIZ_VISION-COMPUTADORA/
 │
 ├─ Trabajo_01_VisionPorComputador.ipynb
 ├─ requirements.txt
 ├─ README.md
 │
-├─ Dataset/                      # Archivos requeridos en cada punto
-│  ├─ Tablero/                   # Imágenes para el punto 1
-│  │   └─ img_*.jpeg             # Donde * varía de 7 hasta 30
-│  ├─ Fachada/                   # Imágenes para los puntos 2 y 4
+├─ Dataset/                         # Archivos requeridos en cada punto
+│  ├─ Tablero/                      # Imágenes para el punto 1
+│  │   └─ img_*.jpeg                # Donde * varía de 7 hasta 30
+│  ├─ Fachada/                      # Imágenes para los puntos 2 y 4
 │  │   ├─ fachada_dia.jpg
 │  │   └─ fachada_noche.jpg
-│  ├─ paisaje.jpg                # Imagen para el punto 3
-│  └─ escritorio.jpg             # Input para el punto 5
+│  ├─ paisaje.jpg                   # Imagen para el punto 3
+│  └─ escritorio.jpg                # Input para el punto 5
 │
 ├─ Resultados/
-│  ├─ resultados_calibracion/        # Resultados ejercicio 1
-│  ├─ transformaciones_intensidad/   # Resultados ejercicio 2
-│  ├─ transformaciones_geometricas/  # Resultados ejercicio 3
-│  ├─ distribucion_intensidades/     # Resultados ejercicio 4
-│  └─ segmentacion/                  # Resultados ejercicio 5
+│  ├─ resultados_calibracion/       # Resultados ejercicio 1
+│  ├─ transformaciones_intensidad/  # Resultados ejercicio 2
+│  ├─ transformaciones_geometricas/ # Resultados ejercicio 3
+│  ├─ distribucion_intensidades/    # Resultados ejercicio 4
+│  └─ segmentacion/                 # Resultados ejercicio 5
 │
 └─ Documentacion/
-   └─ QuantumViz.pdf                 # PDF con teoría, metodología, resultados y análisis
+   └─ QuantumViz.pdf                # PDF con teoría, metodología, resultados y análisis
+```
 
 > Nota:
 > En el punto 3, en los resultados mostrados en la celda correspondiente dentro del archivo .ipynb, no se visualizará el GIF. Para poder verlo, deberá acceder a la carpeta donde se encuentra almacenado el archivo generado. (Resultados/transformaciones_geometricas/transformaciones.gif)
