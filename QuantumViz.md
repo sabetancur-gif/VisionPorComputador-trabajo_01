@@ -6,7 +6,7 @@ permalink: /
 theme: minimal   
 ---
 
-{% raw %}
+´´´css
 <style>
 /* Fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
@@ -122,7 +122,7 @@ body{
 /* Smooth anchor scroll */
 html { scroll-behavior: smooth; }
 </style>
-{% endraw %}
+'''
 
 <!-- Layout HTML: sidebar + content wrapper -->
 <div class="pro-wrapper">
@@ -135,7 +135,7 @@ html { scroll-behavior: smooth; }
   </aside>
 
   <main class="pro-content" id="pro-content">
-<!-- START: contenido original (no modificado, salvo la lista corregida abajo) -->
+<!-- START: contenido original -->
 
 # Taller 1 — Fundamentos y calibración de cámara
 
