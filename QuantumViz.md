@@ -6,6 +6,135 @@ permalink: /
 theme: minimal   
 ---
 
+<!--
+  Estilos y script para apariencia + sidebar TOC sticky.
+-->
+<style>
+  /* Fuentes */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+  :root{
+    --bg: #f6f8fb;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #0f172a;
+    --accent-2: #0ea5a4;
+    --maxw: 1200px;
+  }
+
+  html,body{height:100%}
+  body{
+    margin:0;
+    padding:28px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg,#fbfdff 0%, var(--bg) 100%);
+    color:var(--accent);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* Layout */
+  .pro-wrapper{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  /* Sidebar */
+  #toc-sidebar{
+    position: sticky;
+    top: 28px;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 8px 24px rgba(11,15,30,0.06);
+    border: 1px solid rgba(15,23,42,0.04);
+    height: calc(100vh - 56px);
+    overflow: auto;
+  }
+  #toc-sidebar h4{margin:0 0 10px 0;color:var(--accent-2);font-size:13px}
+  #toc-list{list-style:none;padding:0;margin:0}
+  #toc-list li{margin:8px 0;font-size:14px}
+  #toc-list li.h3{margin-left:10px;font-size:13px;color:var(--muted)}
+  #toc-list a{color:var(--accent);text-decoration:none}
+  #toc-list a:hover{text-decoration:underline}
+
+  /* Main content */
+  .pro-content{background:transparent}
+  .header-card{
+    background:var(--card);
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 8px 24px rgba(11,15,30,0.06);
+    border:1px solid rgba(15,23,42,0.04);
+    margin-bottom:18px;
+  }
+  .header-meta{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+  .pro-content h1{font-size:28px;margin:0 0 8px 0}
+  .pro-content h2{font-size:20px;margin-top:28px;margin-bottom:10px}
+  .pro-content h3{font-size:16px;margin-top:18px;margin-bottom:8px}
+  .pro-content p{margin:8px 0;color:#10203a}
+  .pro-content ul{margin:6px 0 12px 20px}
+  .pro-content pre{background:#0b1220;color:#e6eef6;padding:12px;border-radius:8px;overflow:auto}
+
+  /* Section cards */
+  .section-card{
+    background: var(--card);
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+    border: 1px solid rgba(15,23,42,0.04);
+    box-shadow: 0 6px 18px rgba(11,15,30,0.03);
+  }
+
+  /* Floating actions */
+  .top-actions{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:1200;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:10px 14px;background:var(--accent-2);color:white;border-radius:12px;border:none;box-shadow:0 8px 18px rgba(14,165,164,0.18);cursor:pointer;font-weight:700;text-decoration:none;font-size:14px;
+  }
+  .btn.secondary{background:#0f172a;padding:9px 12px}
+
+  .muted{color:var(--muted);font-size:13px}
+
+  /* Responsive */
+  @media (max-width:980px){
+    .pro-wrapper{grid-template-columns:1fr;padding:0 12px}
+    #toc-sidebar{position:relative;top:0;height:auto;margin-bottom:14px}
+  }
+
+  @media print{
+    body{background:white;padding:0}
+    #toc-sidebar{display:none}
+    .pro-wrapper{grid-template-columns:1fr}
+  }
+
+  /* Smooth anchor scroll */
+  html { scroll-behavior: smooth; }
+</style>
+
+<!-- Sidebar container -->
+<aside id="toc-sidebar" aria-label="Tabla de contenido">
+  <h4>📑 Tabla de contenido</h4>
+  <ul id="toc-list"></ul>
+  <div style="height:12px"></div>
+  <div class="muted">Versión profesional · Responsive · Imprimible</div>
+</aside>
+
+<div class="pro-wrapper">
+  <main class="pro-content">
+
+<!-- BEGIN: -->
 # Taller 1 — Fundamentos y calibración de cámara
 
 **Visión por Computador**  
@@ -130,7 +259,7 @@ Los resultados obtenidos del proceso de calibración muestran una buena consiste
 
 La aplicación de transformaciones de intensidad a nivel de píxel permitió modificar de forma controlada las características visuales de las imágenes según las condiciones de iluminación. En la imagen diurna, los ajustes de brillo y contraste evidenciaron que el aumento del brillo realza las zonas claras pero puede provocar pérdida de detalle por saturación, mientras que un incremento del contraste mejora la definición de bordes y sombras al ampliar el rango tonal. Por su parte, la corrección gamma (γ < 1) permitió iluminar de manera más uniforme sin saturar los valores altos de intensidad, siendo especialmente útil para compensar condiciones de baja iluminación.
 
-En la imagen nocturna, los mismos ajustes contribuyeron a resaltar detalles ocultos en las sombras, aunque un incremento excesivo del brillo introdujo cierto ruido visual. Las operaciones aritméticas entre imágenes (A y B) mostraron diferentes comportamientos: la suma (A + B) generó una fusión más brillante que combina información de ambas tomas; la resta (|A − B|) resaltó las diferencias de iluminación y color entre el día y la noche; la multiplicación (A × B) oscureció la escena, siendo útil para analizar regiones comunes; y la división (A / B) amplificó las diferencias de luminancia, destacando las estructuras más iluminadas. En conjunto, estos resultados demuestran que las transformaciones de intensidad son herramientas fundamentales en visión por computador, al mejorar la percepción visual, realizar correcciones fotométricas y facilitar la segmentación o detección de características bajo condiciones de iluminación variables.
+En la imagen nocturna, los mismos ajustes contribuyeron a resaltar detalles ocultos en las sombras, aunque un incremento excesivo del brillo introdujo cierto ruido visual. Las operaciones aritméticas entre imágenes (A y B) mostraron diferentes comportamientos: la suma (A + B) generó una fusión más brillante que combina información de ambas tomas; la resta (|A − B|) resaltó las diferencias de iluminación y color entre el día y la noche; la multiplicación (A × B) oscureció la escena, siendo útil para analizar regiones comunes; y la división (A ÷ B) amplificó las diferencias de luminancia, destacando las estructuras más iluminadas. En conjunto, estos resultados demuestran que las transformaciones de intensidad son herramientas fundamentales en visión por computador, al mejorar la percepción visual, realizar correcciones fotométricas y facilitar la segmentación o detección de características bajo condiciones de iluminación variables.
 
 ### Transformaciones de rotación y traslación
 
@@ -164,11 +293,11 @@ En conclusión, el desarrollo de este taller permitió comprender de manera inte
 ## Reporte de contribución individual
 
 Los ejercicios fueron distribuidos en primera instancia de la siguiente forma:
-> Punto 01: Realizado entre todos
-> Punto 01: Reinaldo David Lopez Narvaez
-> Punto 03: Santiago Betancur Montoya
-> Punto 04: Monica Paola Vargas Tirado
-> Punto 05: Jose Sebastian Garzon Parra
+- Punto 01: Realizado entre todos
+- Punto 01: Reinaldo David Lopez Narvaez
+- Punto 03: Santiago Betancur Montoya
+- Punto 04: Monica Paola Vargas Tirado
+- Punto 05: Jose Sebastian Garzon Parra
 
 Posteriormente, nos fuimos reuniendo de forma periódica para revisar conjuntamente la solución de los diferentes puntos.
 Luego, tomamos la decisión de crear un archivo .ipynb, de modo que cada integrante tuviera un espacio para escribir e implementar la forma en que pensó y ejecutó el ejercicio.
@@ -182,4 +311,61 @@ En cuanto al informe, la estructura de carpetas y otros aspectos a desarrollar, 
 - López, J. F. (2012, noviembre 2). *Procesamiento digital de imágenes*. Blog de WordPress. [https://procesamientodigitalimagenes.wordpress.com/](https://procesamientodigitalimagenes.wordpress.com/)  
 - GeeksforGeeks. (2025, julio 15). Camera Calibration with Python – OpenCV. https://www.geeksforgeeks.org/python/camera-calibration-with-python-opencv/  
 - Sadekar, K., & Mallick, S. (2020, febrero 25). Camera Calibration using OpenCV. https://learnopencv.com/camera-calibration-using-opencv/?authuser=1
+<!-- END: -->
+
+  </main>
+</div>
+
+<!-- Scripts: genera la TOC a partir de h2/h3 y mejora la presentación -->
+<script>
+  (function(){
+    // espera hasta que Jekyll/renderer haya convertido MD a HTML
+    function buildTOC(){
+      const toc = document.getElementById('toc-list');
+      if(!toc) return;
+      // buscar headings dentro del documento (h2/h3)
+      const headings = document.querySelectorAll('h2, h3');
+      if(!headings || headings.length===0) return;
+      function slugify(s){
+        return s.toString().toLowerCase().trim()
+          .replace(/[^a-z0-9\\s-áéíóúñü]/g,'')
+          .replace(/\\s+/g,'-');
+      }
+      headings.forEach(h=>{
+        if(!h.id) h.id = slugify(h.textContent);
+        const li = document.createElement('li');
+        li.className = h.tagName.toLowerCase();
+        const a = document.createElement('a');
+        a.href = '#'+h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        if(h.tagName.toLowerCase() === 'h3') li.classList.add('h3');
+        toc.appendChild(li);
+      });
+    }
+
+    // Si el DOM ya está listo, construye la TOC; algunos motores (GitHub Pages) ya renderizan MD en build-time,
+    // pero la función es segura si se ejecuta en el cliente.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', buildTOC);
+    } else {
+      buildTOC();
+    }
+
+    // Small accessibility: add keyboard shortcut "t" to focus TOC
+    document.addEventListener('keydown', function(e){
+      if(e.key === 't' && !e.metaKey && !e.ctrlKey && !e.altKey){
+        const toc = document.getElementById('toc-sidebar');
+        if(toc) { toc.focus(); e.preventDefault(); }
+      }
+    });
+  })();
+</script>
+
+<!-- Floating actions (HTML simple, sin modificar tu contenido) -->
+<div class="top-actions" aria-hidden="false">
+  <a class="btn" href="#taller-1-—-fundamentos-y-calibración-de-cámara">🔎 Ir al inicio</a>
+  <a class="btn secondary" href="#toc-sidebar">📑 Índice</a>
+</div>
+
 
