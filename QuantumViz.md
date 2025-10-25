@@ -3,7 +3,7 @@ title: "Taller 1: Fundamentos y calibración de cámara"
 description: "Visión por Computador — Universidad Nacional de Colombia — Taller 1: calibración, transformaciones y segmentación."
 layout: default
 permalink: /
-# theme: minimal         # Descomenta / ajusta según el tema de GitHub Pages que uses
+theme: minimal   
 ---
 
 # Taller 1 — Fundamentos y calibración de cámara
