@@ -3,10 +3,10 @@ title: "Taller 1: Fundamentos y calibración de cámara"
 description: "Visión por Computador — Universidad Nacional de Colombia — Taller 1: calibración, transformaciones y segmentación."
 layout: default
 permalink: /
-theme: minimal   
+theme: minimal
 ---
 
-```css
+<style>
 
 /* Fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
@@ -121,9 +121,10 @@ body{
 
 /* Smooth anchor scroll */
 html { scroll-behavior: smooth; }
-```
+<style>
 
 <!-- Layout HTML: sidebar + content wrapper -->
+  
 <div class="pro-wrapper">
 
   <aside id="toc-sidebar" aria-label="Tabla de contenido" role="navigation">
@@ -134,6 +135,7 @@ html { scroll-behavior: smooth; }
   </aside>
 
   <main class="pro-content" id="pro-content">
+  
 <!-- START: contenido original -->
 
 # Taller 1 — Fundamentos y calibración de cámara
@@ -317,7 +319,6 @@ En cuanto al informe, la estructura de carpetas y otros aspectos a desarrollar, 
   </main>
 </div>
 
-```css
 <script>
 /*
   Genera la TOC sidebar a partir de los headings h2/h3 que ya estarán presentes
@@ -357,7 +358,6 @@ En cuanto al informe, la estructura de carpetas y otros aspectos a desarrollar, 
   }
 })();
 </script>
-```
 
 <!-- Accesos rápidos -->
 <div class="top-actions" aria-hidden="false">
