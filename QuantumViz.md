@@ -183,10 +183,3 @@ En cuanto al informe, la estructura de carpetas y otros aspectos a desarrollar, 
 - GeeksforGeeks. (2025, julio 15). Camera Calibration with Python – OpenCV. https://www.geeksforgeeks.org/python/camera-calibration-with-python-opencv/  
 - Sadekar, K., & Mallick, S. (2020, febrero 25). Camera Calibration using OpenCV. https://learnopencv.com/camera-calibration-using-opencv/?authuser=1
 
----
-
-### Notas de implementación (opcional)
-- Si publicas con GitHub Pages y usas un tema (ej. `minimal`, `cayman`), ajusta el `theme` o el `layout` en el front matter y en `_config.yml`.  
-- Para activar una TOC automática en Jekyll puedes usar plugins o generar la tabla manualmente (ya incluida aquí).  
-- ¿Quieres que te entregue la versión **con YAML personalizada para el tema `cayman`**, o que añada **badges** (licencia, status) y un **archivo LICENSE**? Dime cuál y lo dejo listo.
-
